@@ -1,0 +1,33 @@
+extends ../layouts/common3.pug
+
+block content
+  h1 Edit word
+
+  if errors
+    each error in errors
+      .alert.alert-danger= error
+
+  form(method="POST", action="/word/" + word._id)
+    .form-group
+      label(for="wordName") Word name
+      input#wordName.form-control(name="wordName", type="text", value= word.wordName||'')
+    .form-group
+      label(for="symbol") Phonetic symbol
+      input#symbol.form-control(name="symbol", type="text",value=word.symbol||'')
+    .form-group
+      label(for="VnMeaning") Vietnamese meaning
+      input#VnMeaning.form-control(name="VnMeaning", type="text",value=word.VnMeaning||'')
+    .form-group
+      label(for="EnMeaning") English meaning
+      input#EnMeaning.form-control(name="EnMeaning", type="text",value=word.EnMeaning||'')
+    .form-group
+      label(for="difMean") Difference mean
+      input#difMean.form-control(name="difMean", type="text",value=word.difMean||'')
+    .form-group
+      label(for="image") Link image
+      input#image.form-control(name="image", type="text",value=word.image||'')
+
+    button.btn.btn-primary.mr-3 Update
+  
+
+    

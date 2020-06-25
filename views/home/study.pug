@@ -1,0 +1,25 @@
+extends ../layouts/common3.pug
+
+block content
+  .study-btn
+    button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#multiCollapseExample1', aria-expanded='false', aria-controls='multiCollapseExample1') Toggle to see first side
+    button.btn.btn-primary(type='button', data-toggle='collapse', data-target='.multi-collapse', aria-expanded='false', aria-controls='multiCollapseExample1 multiCollapseExample2') Toggle to see both
+    button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#multiCollapseExample2', aria-expanded='false', aria-controls='multiCollapseExample2') Toggle to see second side
+  .row 
+    .col
+      #multiCollapseExample1.collapse.multi-collapse
+        .card.card-body
+          img.text-center(src=word.image)
+          h2#word-name.text-center #{word.wordName}
+          p#symbol.text-center #{word.symbol}
+          
+    .col
+      #multiCollapseExample2.collapse.multi-collapse
+        .card.card-body
+          h2#vn-meaning #{word.VnMeaning}
+          p#en-meaning #{word.EnMeaning}
+          p#dif-mean #{word.difMean}
+
+
+  .next
+    a.btn.btn-success.next-btn(type='button', href='/studycontinue') Next

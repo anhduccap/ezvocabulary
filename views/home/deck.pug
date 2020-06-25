@@ -1,0 +1,25 @@
+extends ../layouts/common2.pug
+
+block content
+    h1
+        span.mr-3 Words
+        a.btn.btn-primary(href="/add") New
+        a.btn.btn-primary.ml-3(href="/study") Study
+    .d-flex.align-items-center
+        form.ml-auto(action="/deck/search", method="GET", class="d-flex")
+            input(type="text", name="q", class="form-control")
+            button(class="btn btn-primary ml-2") Search
+    table.table
+        tr
+            th Word name
+            th Vietnamese meaning
+            th English meaning
+        each word in words
+            tr
+                td= word.wordName
+                td= word.VnMeaning
+                td= word.EnMeaning
+                td
+                    a.btn.btn-light(href='/word/' + word._id) Edit
+                td
+                    a.btn.btn-danger.mr-3.delete-word(href='/delete/word/' + word._id, data-id=word._id) Delete

@@ -1,0 +1,56 @@
+.study-btn {
+    position: relative;
+    left: 50%;
+    transform: translate(-27.5%);
+}
+
+.study-btn button {
+    margin-left: 20px;
+}
+
+.row {
+    margin-top: 30px;
+}
+
+.next {
+    margin-top: 30px;
+}
+
+.next-btn {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.card {
+    height: 65vh;
+}
+
+.card img {
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+#word-name {
+    font-size: 300%;
+}
+
+#symbol {
+    font-size: 150%;
+}
+
+#vn-meaning {
+    margin-top: 75px;
+    font-size: 300%;
+}
+
+#en-meaning {
+    margin-top: 25px;
+    font-size: 150%;
+}
+
+#dif-mean {
+    margin-top: 25px;
+    font-size: 150%;
+}
+
