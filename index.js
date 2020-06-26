@@ -22,7 +22,7 @@ app.set('view engine', 'pug')
 //db
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/ezvocabulary')
+mongoose.connect('mongodb+srv://anhduccap:ken1251999@ezvocabulary-yzyeo.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority')
 let db = mongoose.connection
 
 //check connection
@@ -39,5 +39,5 @@ app.use('/', homeRouter)
 app.use('/', authRouter)
 
 //start server
-const port = process.env.PORT || 9000
+const port = process.env.PORT || 8080
 app.listen(port, () => console.log('App listening on port ' + port))
