@@ -2,6 +2,7 @@ let User = require('../models/user')
 let Word = require('../models/word')
 const e = require('express')
 
+module.exports.home = (req,res) => res.redirect('/login')
 
 module.exports.getDeck = (req, res) => {
     Word.find({}, (err, words) => {

@@ -3,6 +3,7 @@ const router = express.Router()
 const controller = require('../controllers/home.controllers')
 const authMiddleware = require('../middlewares/auth.middlewares')
 
+router.get('/', authMiddleware.requireAuth, controller.home)
 router.get('/delete/word/:id', authMiddleware.requireAuth,controller.deleteWord)
 router.get('/about', authMiddleware.requireAuth,controller.about)
 router.get('/deck', authMiddleware.requireAuth, controller.getDeck)
